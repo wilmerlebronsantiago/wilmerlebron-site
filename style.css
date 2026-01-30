@@ -3,43 +3,46 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.4) contrast(1.1);
-  animation: fadeMove 30s infinite ease-in-out;
+  filter: brightness(0.35) contrast(1.1);
   opacity: 0;
-  transform: scale(1.08);
 }
 
-.hero-bg-1 {
+/* Individual animations */
+.hero1 {
   background-image: url("hero1.jpg");
-  animation-delay: 0s;
+  animation: fade1 24s infinite;
 }
 
-.hero-bg-2 {
+.hero2 {
   background-image: url("hero2.jpg");
-  animation-delay: 10s;
+  animation: fade2 24s infinite;
 }
 
-.hero-bg-3 {
+.hero3 {
   background-image: url("hero3.jpg");
-  animation-delay: 20s;
+  animation: fade3 24s infinite;
 }
 
-@keyframes fadeMove {
-  0% {
-    opacity: 0;
-    transform: scale(1.08);
-  }
-  10% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+/* Each image owns a time slot */
+@keyframes fade1 {
+  0%   { opacity: 1; transform: scale(1.05); }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes fade2 {
+  0%   { opacity: 0; }
+  30%  { opacity: 0; }
+  40%  { opacity: 1; transform: scale(1.05); }
+  70%  { opacity: 1; }
+  80%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes fade3 {
+  0%   { opacity: 0; }
+  70%  { opacity: 0; }
+  80%  { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; }
 }
