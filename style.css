@@ -63,6 +63,6 @@ header {
 /* DESKTOP focal point correction (keeps face in frame) */
 @media (min-width: 900px) {
   .hero-bg {
-    background-position: center 25%;
+    background-position: center 40%;
   }
 }
