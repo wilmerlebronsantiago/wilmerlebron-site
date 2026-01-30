@@ -9,7 +9,7 @@
 :root {
   --bg-dark: #0a0a0a;
   --text-main: #f5f5f5;
-  --text-muted: #b5b5b5;
+  --text-muted: #bdbdbd;
 }
 
 body {
@@ -30,22 +30,21 @@ header {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center center;
-  filter: brightness(0.32) contrast(1.1);
+  background-position: center;
+  filter: brightness(0.35) contrast(1.1);
   opacity: 0;
-  animation: heroFlow 36s infinite ease-in-out;
+  animation: heroFlow 24s infinite;
 }
 
-/* Focus each image on face */
-.hero1 { background-image: url("hero1.jpg"); background-position: center 40%; animation-delay: 0s; }
-.hero2 { background-image: url("hero2.jpg"); background-position: center 45%; animation-delay: 12s; }
-.hero3 { background-image: url("hero3.jpg"); background-position: center 50%; animation-delay: 24s; }
+.hero1 { background-image: url("hero1.jpg"); animation-delay: 0s; }
+.hero2 { background-image: url("hero2.jpg"); animation-delay: 8s; }
+.hero3 { background-image: url("hero3.jpg"); animation-delay: 16s; }
 
 @keyframes heroFlow {
-  0%   { opacity: 0; transform: scale(1.06); }
-  12%  { opacity: 1; }
-  35%  { opacity: 1; transform: scale(1); }
-  45%  { opacity: 0; }
+  0%   { opacity: 0; transform: scale(1.08); }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; transform: scale(1); }
+  40%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -62,16 +61,19 @@ header {
 }
 
 .hero-content h1 {
-  font-size: clamp(3rem, 6vw, 4.2rem);
-  letter-spacing: 3px;
-  margin-bottom: 20px;
+  font-size: clamp(3.5rem, 7vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 26px;
+  text-transform: uppercase;
 }
 
 .hero-content p {
-  max-width: 820px;
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  line-height: 1.7;
+  max-width: 860px;
+  font-size: 1.35rem;
+  font-weight: 300;
+  color: #d0d0d0;
+  line-height: 1.8;
 }
 
 /* ================= SECTIONS ================= */
@@ -82,10 +84,10 @@ section {
 }
 
 section h2 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   text-align: center;
   margin-bottom: 50px;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 
 .section-text {
@@ -113,20 +115,29 @@ iframe {
 /* ================= FOOTER ================= */
 footer {
   background: #000;
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
-footer p {
-  margin: 10px 0;
-  color: var(--text-muted);
+footer .contact {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  color: #f0f0f0;
 }
 
-footer a {
-  color: #cfcfcf;
-  margin: 0 12px;
+footer .socials a {
+  margin: 0 14px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: #bdbdbd;
   text-decoration: none;
-  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+footer .socials a:hover {
+  color: #ffffff;
 }
 </style>
 </head>
@@ -141,9 +152,9 @@ footer a {
   <div class="hero-content">
     <h1>Wilmer Lebrón</h1>
     <p>
-      Versatile professional guitarist with nearly two decades of experience. Has studies from the
-      Conservatorio de Música de Puerto Rico & Inter-American University of Puerto Rico.
-      Equally fluent in high-level guitar performance and real-world musicianship.
+      Versatile professional guitarist with nearly two decades of experience.
+      Studies from the Conservatorio de Música de Puerto Rico & Inter-American University.
+      Equally fluent in high-level performance and real-world musicianship.
     </p>
   </div>
 </header>
@@ -159,30 +170,31 @@ footer a {
 <section>
   <h2>Live Performances & Playthroughs</h2>
   <div class="video-grid">
-    <iframe src="https://www.youtube.com/embed/CE6WVE8Ps1o"></iframe>
-    <iframe src="https://www.youtube.com/embed/awvufi_wslc"></iframe>
-    <iframe src="https://www.youtube.com/embed/pPGkzjcSYa8"></iframe>
+    <iframe src="https://www.youtube.com/embed/CE6WVE8Ps1o" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/awvufi_wslc" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/pPGkzjcSYa8" allowfullscreen></iframe>
   </div>
 </section>
 
 <section>
   <h2>About</h2>
   <p class="section-text">
-    Wilmer Lebrón has recorded songs and albums with projects such as Amore Ad Lunam and Neo M,
-    and has performed alongside countless artists from Puerto Rico and the U.S.
-    His musical range spans rock, metal, jazz, blues, salsa, and Latin dance music —
+    Wilmer Lebrón has recorded albums with projects such as Amore Ad Lunam and Neo M,
+    and has performed alongside countless artists across Puerto Rico and the U.S.
+    His range spans rock, metal, jazz, blues, salsa, and Latin music —
     delivering a rare balance of precision, feel, and versatility.
   </p>
 </section>
 
 <footer>
-  <p>Contact: wilmer@estrumiando.com</p>
-  <p>
+  <div class="contact">wilmer@estrumiando.com</div>
+
+  <div class="socials">
     <a href="https://linktr.ee/wilmerlebronmusic">Linktree</a>
     <a href="https://www.instagram.com/wilmerlebronguitar">Instagram</a>
     <a href="https://www.facebook.com/share/1AYFPs4zFg/">Facebook</a>
     <a href="https://www.tiktok.com/@wilmerlebron7">TikTok</a>
-  </p>
+  </div>
 </footer>
 
 </body>
