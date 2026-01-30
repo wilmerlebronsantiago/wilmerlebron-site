@@ -1,48 +1,68 @@
+/* ================= HERO (FINAL – RESPONSIVE + SLIDESHOW SAFE) ================= */
+
+header {
+  position: relative;
+  height: 92vh;
+  overflow: hidden;
+}
+
+/* Base hero image layer */
 .hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
   filter: brightness(0.35) contrast(1.1);
-  opacity: 0;
+  animation-duration: 24s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  /* MOBILE-FIRST focal point (face safe) */
+  background-position: center 45%;
 }
 
-/* Individual animations */
+/* Individual images */
 .hero1 {
   background-image: url("hero1.jpg");
-  animation: fade1 24s infinite;
+  animation-name: slide1;
 }
 
 .hero2 {
   background-image: url("hero2.jpg");
-  animation: fade2 24s infinite;
+  animation-name: slide2;
 }
 
 .hero3 {
   background-image: url("hero3.jpg");
-  animation: fade3 24s infinite;
+  animation-name: slide3;
 }
 
-/* Each image owns a time slot */
-@keyframes fade1 {
-  0%   { opacity: 1; transform: scale(1.05); }
-  30%  { opacity: 1; }
-  40%  { opacity: 0; }
-  100% { opacity: 0; }
+/* Animations – one image always visible */
+@keyframes slide1 {
+  0%   { z-index: 3; transform: scale(1.05); }
+  30%  { z-index: 3; transform: scale(1); }
+  33%  { z-index: 1; }
+  100% { z-index: 1; }
 }
 
-@keyframes fade2 {
-  0%   { opacity: 0; }
-  30%  { opacity: 0; }
-  40%  { opacity: 1; transform: scale(1.05); }
-  70%  { opacity: 1; }
-  80%  { opacity: 0; }
-  100% { opacity: 0; }
+@keyframes slide2 {
+  0%   { z-index: 1; }
+  33%  { z-index: 3; transform: scale(1.05); }
+  63%  { z-index: 3; transform: scale(1); }
+  66%  { z-index: 1; }
+  100% { z-index: 1; }
 }
 
-@keyframes fade3 {
-  0%   { opacity: 0; }
-  70%  { opacity: 0; }
-  80%  { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 1; }
+@keyframes slide3 {
+  0%   { z-index: 1; }
+  66%  { z-index: 3; transform: scale(1.05); }
+  96%  { z-index: 3; transform: scale(1); }
+  100% { z-index: 1; }
+}
+
+/* DESKTOP focal point correction (keeps face in frame) */
+@media (min-width: 900px) {
+  .hero-bg {
+    background-position: center 25%;
+  }
 }
