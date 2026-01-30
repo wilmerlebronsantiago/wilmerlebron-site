@@ -1,0 +1,45 @@
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) contrast(1.1);
+  animation: fadeMove 30s infinite ease-in-out;
+  opacity: 0;
+  transform: scale(1.08);
+}
+
+.hero-bg-1 {
+  background-image: url("hero1.jpg");
+  animation-delay: 0s;
+}
+
+.hero-bg-2 {
+  background-image: url("hero2.jpg");
+  animation-delay: 10s;
+}
+
+.hero-bg-3 {
+  background-image: url("hero3.jpg");
+  animation-delay: 20s;
+}
+
+@keyframes fadeMove {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wilmer Lebrón – Guitarist</title>
+
+<style>
+:root {
+  --bg: #0b0b0b;
+  --fg: #f3f3f3;
+  --muted: #b6b6b6;
+  --accent: #cfa76e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 6vw, 4.8rem);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ========== IMAGE FLOW (FIXED & VISIBLE) ========== */
+.image-flow {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 300%;
+  animation: slide 36s linear infinite;
+}
+
+.image-flow img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.45);
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-66.666%); }
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 90px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ================= APPLE MUSIC ================= */
+.music-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.music-text h3 {
+  margin-bottom: 15px;
+}
+
+.music-text p {
+  font-size: 1.05rem;
+}
+
+.music-embed iframe {
+  width: 100%;
+  height: 520px;
+  border-radius: 14px;
+  border: none;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.socials a {
+  margin: 0 12px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.socials a:hover {
+  color: var(--accent);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .music-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="image-flow">
+    <img src="images/Hero 1.jpg" alt="Wilmer Lebrón guitar performance">
+    <img src="images/Hero 2.jpg" alt="Wilmer Lebrón live">
+    <img src="images/Hero 3.jpg" alt="Wilmer Lebrón studio">
+  </div>
+
+  <div class="hero-content">
+    <h1>Wilmer Lebrón</h1>
+    <h2>Versatile Professional Guitarist</h2>
+    <p>
+      Nearly two decades of experience performing, recording, and collaborating
+      across rock, metal, blues, jazz, and contemporary styles —
+      with a strong focus on musicality, tone, and presence.
+    </p>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<section>
+  <h3>Overview</h3>
+  <p>
+    I’m a professional guitarist based in Puerto Rico, working across live performance,
+    studio recording, and collaborations. My approach balances technical precision
+    with feel and musical storytelling.
+  </p>
+</section>
+
+<!-- LIVE -->
+<section>
+  <h3>Live Performances & Playthroughs</h3>
+  <p>
+    From intimate jazz and blues settings to high-energy rock and metal stages,
+    my playing adapts to the music and the moment.
+  </p>
+</section>
+
+<!-- APPLE MUSIC -->
+<section>
+  <div class="music-wrapper">
+    <div class="music-text">
+      <h3>Recorded Work</h3>
+      <p>
+        I was one of the two guitarists who recorded this album.
+        This release represents my most polished and complete recorded work to date,
+        showcasing both rhythm and lead guitar contributions.
+      </p>
+    </div>
+
+    <div class="music-embed">
+      <iframe
+        allow="autoplay *; encrypted-media *;"
+        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+        src="https://embed.music.apple.com/us/album/neo-m/1727212077">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h3>About</h3>
+  <p>
+    My background includes live performance, studio recording, teaching,
+    and music production. Whether on stage or in the studio,
+    my goal is always to serve the music with clarity and intention.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h3>Contact</h3>
+  <p>
+    <a href="mailto:wilmer@estrumiando.com">wilmer@estrumiando.com</a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="socials">
+    <a href="https://linktr.ee/wilmerlebronmusic" target="_blank">Linktree</a>
+    <a href="https://www.facebook.com/share/1AYFPs4zFg/?mibextid=wwXIfr" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/wilmerlebronguitar" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@wilmerlebron7" target="_blank">TikTok</a>
+  </div>
+</footer>
+
+</body>
+</html>
