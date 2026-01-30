@@ -1,4 +1,4 @@
-/* ================= HERO (FINAL – RESPONSIVE + SLIDESHOW SAFE) ================= */
+/* ================= HERO (FINAL – MOBILE + DESKTOP FACE-FIX) ================= */
 
 header {
   position: relative;
@@ -37,7 +37,7 @@ header {
   animation-name: slide3;
 }
 
-/* Animations – one image always visible */
+/* Animations – one image always on top */
 @keyframes slide1 {
   0%   { z-index: 3; transform: scale(1.05); }
   30%  { z-index: 3; transform: scale(1); }
@@ -60,9 +60,10 @@ header {
   100% { z-index: 1; }
 }
 
-/* DESKTOP focal point correction (keeps face in frame) */
-@media (min-width: 900px) {
-  .hero-bg {
-    background-position: center 40%;
-  }
+/* ================== DESKTOP CORRECTION ================== */
+@media (min-width: 1200px) {
+  /* Adjust each image individually to center your face */
+  .hero1 { background-position: center 20%; }
+  .hero2 { background-position: center 18%; }
+  .hero3 { background-position: center 22%; }
 }
