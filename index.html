@@ -3,256 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wilmer Lebrón | Guitarist</title>
+<title>Wilmer LeBron – Guitarist</title>
 
 <style>
-:root {
-  --bg: #0b0b0b;
-  --fg: #f2f2f2;
-  --muted: #b0b0b0;
-  --accent: #cfa76e;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0b0b;
+  color: #f2f2f2;
 }
 
-/* ================= HERO ================= */
-.hero {
+/* ---------- HERO ---------- */
+header {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
-.hero::after {
-  content: "";
+.hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
-  z-index: 1;
-}
-
-/* Background fading images */
-.hero-bg img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35);
   opacity: 0;
-  animation: fade 24s infinite;
+  animation: heroFade 30s infinite ease-in-out;
 }
 
-.hero-bg img:nth-child(1) { animation-delay: 0s; }
-.hero-bg img:nth-child(2) { animation-delay: 8s; }
-.hero-bg img:nth-child(3) { animation-delay: 16s; }
+.hero1 { background-image: url("hero1.jpg"); animation-delay: 0s; }
+.hero2 { background-image: url("hero2.jpg"); animation-delay: 10s; }
+.hero3 { background-image: url("hero3.jpg"); animation-delay: 20s; }
 
-@keyframes fade {
-  0% { opacity: 0; }
+@keyframes heroFade {
+  0% { opacity: 0; transform: scale(1.08); }
   10% { opacity: 1; }
-  30% { opacity: 1; }
+  30% { opacity: 1; transform: scale(1); }
   40% { opacity: 0; }
   100% { opacity: 0; }
 }
 
-/* Hero content */
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 20px;
 }
 
-.hero h1 {
-  font-size: clamp(3.2rem, 6vw, 4.8rem);
+.hero-content h1 {
+  font-size: 3rem;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
 
-.hero h2 {
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: var(--accent);
-  margin-bottom: 20px;
-}
-
-.hero p {
-  color: var(--muted);
+.hero-content p {
+  max-width: 700px;
   font-size: 1.1rem;
-  max-width: 720px;
-  margin: 0 auto;
+  opacity: 0.9;
 }
 
-/* ================= SECTIONS ================= */
+/* ---------- SECTIONS ---------- */
 section {
+  padding: 70px 20px;
   max-width: 1100px;
   margin: auto;
-  padding: 90px 20px;
 }
 
-section h3 {
-  font-size: 2.2rem;
-  margin-bottom: 18px;
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
 
-section p {
-  font-size: 1.05rem;
-  color: var(--muted);
-}
-
-/* ================= MUSIC ================= */
-.music-grid {
+/* ---------- VIDEOS ---------- */
+.video-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.music-embed iframe {
+iframe {
   width: 100%;
-  height: 520px;
-  border-radius: 14px;
+  height: 200px;
   border: none;
 }
 
-/* ================= CONTACT ================= */
-.contact {
-  text-align: center;
-}
-
-.contact a {
-  color: var(--accent);
-  font-size: 1.1rem;
-  text-decoration: none;
-}
-
-/* ================= FOOTER ================= */
+/* ---------- FOOTER ---------- */
 footer {
-  padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid #222;
+  padding: 40px 20px;
+  background: #000;
 }
 
 footer a {
-  color: var(--muted);
-  margin: 0 12px;
+  color: #aaa;
+  margin: 0 10px;
   text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--accent);
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 900px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-bg">
-    <img src="images/Hero 1.jpg" alt="Wilmer Lebrón performance">
-    <img src="images/Hero 2.jpg" alt="Wilmer Lebrón live">
-    <img src="images/Hero 3.jpg" alt="Wilmer Lebrón studio">
-  </div>
+<header>
+  <div class="hero-bg hero1"></div>
+  <div class="hero-bg hero2"></div>
+  <div class="hero-bg hero3"></div>
 
   <div class="hero-content">
-    <h1>Wilmer Lebrón</h1>
-    <h2>Versatile Professional Guitarist</h2>
+    <h1>Wilmer LeBron</h1>
     <p>
-      Nearly two decades of experience performing, recording, and collaborating
-      across rock, metal, blues, jazz, and modern styles — with a strong focus on
-      musicality, tone, and professionalism.
+      Versatile professional guitarist and musician with nearly two decades of experience.
+      Trained at the Conservatorio de Música de Puerto Rico and the Inter-American University of Puerto Rico.
+      Experienced across rock, metal, jazz, blues, salsa, and Latin dance music.
     </p>
   </div>
 </header>
 
-<!-- OVERVIEW -->
 <section>
-  <h3>Overview</h3>
-  <p>
-    Based in Puerto Rico, I work as a professional guitarist across live performance,
-    studio recording, and collaborations. My approach balances technical precision
-    with feel, adaptability, and musical storytelling.
+  <h2>Overview</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Internationally experienced guitarist who has performed at festivals, theaters, clubs,
+    and studio sessions across Puerto Rico and the United States, collaborating with countless artists
+    and developing a deep, adaptable musical voice.
   </p>
 </section>
 
-<!-- LIVE -->
 <section>
-  <h3>Live Performances & Playthroughs</h3>
-  <p>
-    From intimate jazz and blues settings to high-energy rock and metal stages,
-    my playing adapts to the music, the artist, and the moment.
-  </p>
-</section>
-
-<!-- MUSIC -->
-<section>
-  <div class="music-grid">
-    <div>
-      <h3>Recorded Work</h3>
-      <p>
-        I was one of the two guitarists who recorded this album with Neo M.
-        This release represents my most polished recorded work to date and
-        showcases both rhythm and lead guitar contributions.
-      </p>
-    </div>
-
-    <div class="music-embed">
-      <iframe
-        allow="autoplay *; encrypted-media *;"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-        src="https://embed.music.apple.com/us/album/neo-m/1727212077">
-      </iframe>
-    </div>
+  <h2>Live Performances & Playthroughs</h2>
+  <div class="video-grid">
+    <iframe src="https://www.youtube.com/embed/CE6WVE8Ps1o"></iframe>
+    <iframe src="https://www.youtube.com/embed/awvufi_wslc"></iframe>
+    <iframe src="https://www.youtube.com/embed/pPGkzjcSYa8"></iframe>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section>
-  <h3>About</h3>
-  <p>
-    My background includes extensive live performance, studio recording,
-    and collaboration across multiple genres. Whether on stage or in the studio,
-    my goal is always to serve the music with clarity, intention, and respect
-    for the craft.
+  <h2>About</h2>
+  <p style="max-width:900px; margin:auto;">
+    Wilmer LeBron is a Puerto Rico–based guitarist who has recorded albums and songs with multiple projects,
+    including Amore Ad Lunam and Neo M. His musical range spans from high-level shred guitar and modern rock
+    to jazz, blues, salsa, and danceable Latin styles. He has shared musical spaces with internationally
+    recognized artists and continues to refine a professional, expressive, and powerful musical identity.
   </p>
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h3>Contact</h3>
-  <p>
-    <a href="mailto:wilmer@estrumiando.com">wilmer@estrumiando.com</a>
-  </p>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <a href="https://linktr.ee/wilmerlebronmusic" target="_blank">Linktree</a>
-  <a href="https://www.facebook.com/share/1AYFPs4zFg/?mibextid=wwXIfr" target="_blank">Facebook</a>
-  <a href="https://www.instagram.com/wilmerlebronguitar" target="_blank">Instagram</a>
-  <a href="https://www.tiktok.com/@wilmerlebron7" target="_blank">TikTok</a>
+  <p>Contact: wilmer@estrumiando.com</p>
+  <p>
+    <a href="https://linktr.ee/wilmerlebronmusic">Linktree</a>
+    <a href="https://www.instagram.com/wilmerlebronguitar">Instagram</a>
+    <a href="https://www.facebook.com/share/1AYFPs4zFg/">Facebook</a>
+    <a href="https://www.tiktok.com/@wilmerlebron7">TikTok</a>
+  </p>
 </footer>
 
 </body>
