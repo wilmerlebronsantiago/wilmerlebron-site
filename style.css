@@ -63,7 +63,7 @@ header {
 /* ================== DESKTOP CORRECTION ================== */
 @media (min-width: 1200px) {
   /* Adjust each image individually to center your face */
-  .hero1 { background-position: center 30%; }
-  .hero2 { background-position: center 30%; }
-  .hero3 { background-position: center 30%; }
+  .hero1 { background-position: center 45%; }
+  .hero2 { background-position: center 50%; }
+  .hero3 { background-position: center 50%; }
 }
