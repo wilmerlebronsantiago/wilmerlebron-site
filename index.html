@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wilmer Lebrón – Guitarist</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wilmer Lebrón | Guitarist</title>
 
 <style>
 :root {
   --bg: #0b0b0b;
-  --fg: #f3f3f3;
-  --muted: #b6b6b6;
+  --fg: #f2f2f2;
+  --muted: #b0b0b0;
   --accent: #cfa76e;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--fg);
   line-height: 1.6;
@@ -37,6 +37,39 @@ body {
   text-align: center;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+  z-index: 1;
+}
+
+/* Background fading images */
+.hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  animation: fade 24s infinite;
+}
+
+.hero-bg img:nth-child(1) { animation-delay: 0s; }
+.hero-bg img:nth-child(2) { animation-delay: 8s; }
+.hero-bg img:nth-child(3) { animation-delay: 16s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Hero content */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -51,10 +84,10 @@ body {
 }
 
 .hero h2 {
-  font-size: 1.4rem;
   font-weight: 400;
+  font-size: 1.4rem;
   color: var(--accent);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .hero p {
@@ -64,59 +97,29 @@ body {
   margin: 0 auto;
 }
 
-/* ========== IMAGE FLOW (FIXED & VISIBLE) ========== */
-.image-flow {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  width: 300%;
-  animation: slide 36s linear infinite;
-}
-
-.image-flow img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center top;
-  filter: brightness(0.45);
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-66.666%); }
-}
-
 /* ================= SECTIONS ================= */
 section {
-  padding: 90px 20px;
   max-width: 1100px;
   margin: auto;
+  padding: 90px 20px;
 }
 
 section h3 {
   font-size: 2.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 section p {
-  color: var(--muted);
   font-size: 1.05rem;
+  color: var(--muted);
 }
 
-/* ================= APPLE MUSIC ================= */
-.music-wrapper {
+/* ================= MUSIC ================= */
+.music-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-}
-
-.music-text h3 {
-  margin-bottom: 15px;
-}
-
-.music-text p {
-  font-size: 1.05rem;
 }
 
 .music-embed iframe {
@@ -133,8 +136,8 @@ section p {
 
 .contact a {
   color: var(--accent);
-  text-decoration: none;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 /* ================= FOOTER ================= */
@@ -144,19 +147,19 @@ footer {
   border-top: 1px solid #222;
 }
 
-.socials a {
-  margin: 0 12px;
+footer a {
   color: var(--muted);
+  margin: 0 12px;
   text-decoration: none;
 }
 
-.socials a:hover {
+footer a:hover {
   color: var(--accent);
 }
 
 /* ================= MOBILE ================= */
 @media (max-width: 900px) {
-  .music-wrapper {
+  .music-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -167,8 +170,8 @@ footer {
 
 <!-- HERO -->
 <header class="hero">
-  <div class="image-flow">
-    <img src="images/Hero 1.jpg" alt="Wilmer Lebrón guitar performance">
+  <div class="hero-bg">
+    <img src="images/Hero 1.jpg" alt="Wilmer Lebrón performance">
     <img src="images/Hero 2.jpg" alt="Wilmer Lebrón live">
     <img src="images/Hero 3.jpg" alt="Wilmer Lebrón studio">
   </div>
@@ -178,8 +181,8 @@ footer {
     <h2>Versatile Professional Guitarist</h2>
     <p>
       Nearly two decades of experience performing, recording, and collaborating
-      across rock, metal, blues, jazz, and contemporary styles —
-      with a strong focus on musicality, tone, and presence.
+      across rock, metal, blues, jazz, and modern styles — with a strong focus on
+      musicality, tone, and professionalism.
     </p>
   </div>
 </header>
@@ -188,9 +191,9 @@ footer {
 <section>
   <h3>Overview</h3>
   <p>
-    I’m a professional guitarist based in Puerto Rico, working across live performance,
+    Based in Puerto Rico, I work as a professional guitarist across live performance,
     studio recording, and collaborations. My approach balances technical precision
-    with feel and musical storytelling.
+    with feel, adaptability, and musical storytelling.
   </p>
 </section>
 
@@ -199,19 +202,19 @@ footer {
   <h3>Live Performances & Playthroughs</h3>
   <p>
     From intimate jazz and blues settings to high-energy rock and metal stages,
-    my playing adapts to the music and the moment.
+    my playing adapts to the music, the artist, and the moment.
   </p>
 </section>
 
-<!-- APPLE MUSIC -->
+<!-- MUSIC -->
 <section>
-  <div class="music-wrapper">
-    <div class="music-text">
+  <div class="music-grid">
+    <div>
       <h3>Recorded Work</h3>
       <p>
-        I was one of the two guitarists who recorded this album.
-        This release represents my most polished and complete recorded work to date,
-        showcasing both rhythm and lead guitar contributions.
+        I was one of the two guitarists who recorded this album with Neo M.
+        This release represents my most polished recorded work to date and
+        showcases both rhythm and lead guitar contributions.
       </p>
     </div>
 
@@ -229,9 +232,10 @@ footer {
 <section>
   <h3>About</h3>
   <p>
-    My background includes live performance, studio recording, teaching,
-    and music production. Whether on stage or in the studio,
-    my goal is always to serve the music with clarity and intention.
+    My background includes extensive live performance, studio recording,
+    and collaboration across multiple genres. Whether on stage or in the studio,
+    my goal is always to serve the music with clarity, intention, and respect
+    for the craft.
   </p>
 </section>
 
@@ -245,12 +249,10 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="socials">
-    <a href="https://linktr.ee/wilmerlebronmusic" target="_blank">Linktree</a>
-    <a href="https://www.facebook.com/share/1AYFPs4zFg/?mibextid=wwXIfr" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/wilmerlebronguitar" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@wilmerlebron7" target="_blank">TikTok</a>
-  </div>
+  <a href="https://linktr.ee/wilmerlebronmusic" target="_blank">Linktree</a>
+  <a href="https://www.facebook.com/share/1AYFPs4zFg/?mibextid=wwXIfr" target="_blank">Facebook</a>
+  <a href="https://www.instagram.com/wilmerlebronguitar" target="_blank">Instagram</a>
+  <a href="https://www.tiktok.com/@wilmerlebron7" target="_blank">TikTok</a>
 </footer>
 
 </body>
