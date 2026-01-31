@@ -112,6 +112,20 @@ iframe {
   border: none;
 }
 
+/* ================= MUSIC ================= */
+.album-wrapper {
+  max-width: 520px;
+  margin: auto;
+  background: #0f0f0f;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.album-wrapper iframe {
+  height: 450px;
+  border-radius: 8px;
+}
+
 /* ================= FOOTER ================= */
 footer {
   background: #000;
@@ -119,12 +133,17 @@ footer {
   text-align: center;
 }
 
+footer .contact-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
 footer .contact {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 18px;
-  color: #f0f0f0;
+  font-size: 1.15rem;
+  color: #bdbdbd;
+  margin-bottom: 30px;
 }
 
 footer .socials a {
@@ -152,7 +171,7 @@ footer .socials a:hover {
   <div class="hero-content">
     <h1>Wilmer Lebrón</h1>
     <p>
-      Wilmer Lebrón is a professional guitarist, composer, and educator with over 15 years of experience performing, recording, and teaching music.
+      Professional guitarist, composer, and educator with over 15 years of experience performing, recording, and teaching music.
     </p>
   </div>
 </header>
@@ -160,11 +179,9 @@ footer .socials a:hover {
 <section>
   <h2>Overview</h2>
   <p class="section-text">
-    Throughout his career, he has worked with numerous bands and artists across live performances, studio sessions, and professional music events.
-    His background includes participation in high-level music environments, including performances with Joe Satriani, as well as collaborations with artists such as Bam Margera and others within the professional music scene.
-    These experiences have shaped his approach to music with a strong emphasis on preparation, versatility, and musical maturity.
-    Alongside his performance career, Wilmer has built a solid reputation as an educator, having taught over 100 students of different ages and skill levels,
-    many of whom have gone on to pursue professional and academic paths in music.
+    Throughout his career, Wilmer has worked with numerous bands and artists across live performances, studio sessions, and professional music events.
+    His background includes performances with Joe Satriani and collaborations with artists such as Bam Margera and others within the professional music scene.
+    Alongside his performance career, he has taught over 100 students, many of whom have gone on to pursue professional and academic paths in music.
   </p>
 </section>
 
@@ -178,22 +195,28 @@ footer .socials a:hover {
 </section>
 
 <section>
+  <h2>Music</h2>
+  <div class="album-wrapper">
+    <iframe 
+      src="https://embed.music.apple.com/us/artist/neo-m/1727212077"
+      allow="autoplay *; encrypted-media *; fullscreen *"
+      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation">
+    </iframe>
+  </div>
+</section>
+
+<section>
   <h2>About</h2>
   <p class="section-text">
     Wilmer Lebrón has recorded albums with projects such as Amore Ad Lunam and Neo M,
-    and has performed alongside countless artists across Puerto Rico and the U.S. like Joe Satriani, Bam Margera etc.
-    His range spans rock, metal, jazz, blues, salsa, and Latin music —
-    delivering a rare balance of precision, feel, and versatility.
-    Wilmer is also the owner and lead instructor of Estrumiando, 
-    a music education company focused primarily on developing serious musicians through structured, experience-based learning.
-    He has taught over 100 students, many of whom have gone on to perform with other artists, join bands, and pursue formal studies at institutions such as the Conservatory of Music of Puerto Rico,
-    achieving success in both academic and professional environments.
-    His teaching approach blends technical development, musical understanding, 
-    and real-world application—preparing students not only to play, but to grow as complete musicians.
+    and has performed alongside numerous artists across Puerto Rico and the U.S., including Joe Satriani and Bam Margera.
+    He is the owner and lead instructor of Estrumiando, a music education company focused on developing serious musicians through structured, experience-based learning.
+    His teaching approach blends technical development, musical understanding, and real-world application.
   </p>
 </section>
 
 <footer>
+  <div class="contact-title">Contact</div>
   <div class="contact">wilmer@estrumiando.com</div>
 
   <div class="socials">
